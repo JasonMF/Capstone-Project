@@ -1,0 +1,118 @@
+:root {
+        /* Color Palette */
+        --bg-color: #ffffff;
+        --text-primary: #1a1a1a;
+        --accent-red: #d32f2f;
+        --dark-black: #000000;
+        --grid-border: #eeeeee;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        background-color: var(--bg-color);
+        padding: 50px;
+        color: var(--text-primary);
+      }
+
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 50px 40px rgba(0,0,0,0.1);
+        text-align: right;
+      }
+
+      /* Toolbar Buttons (Black & Red) */
+      .fc .fc-button-primary {
+        background-color: var(--dark-black);
+        border: none;
+        text-transform: capitalize;
+        font-weight: 600;
+        transition: all 0.1s ease;
+      }
+
+      .fc .fc-button-primary:hover {
+        background-color: var(--accent-red);
+      }
+
+      .fc .fc-button-primary:disabled {
+        background-color: #ccc;
+      }
+
+      .fc .fc-toolbar-title {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: var(--dark-black);
+      }
+
+      /* Day Cell Headers */
+      .fc th {
+        padding: 8px 0;
+        background-color: var(--dark-black);
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: 1.4px;
+      }
+
+      /* Highlight Today */
+      .fc .fc-day-today {
+        background: rgba(211, 47, 47, 0.05);
+      }
+
+      .fc .fc-daygrid-day-number {
+        font-weight: 600;
+        padding: 8px;
+        color: var(--text-primary);
+      }
+
+      /* The Red "Today" dot or indicator */
+      .fc .fc-day-today .fc-daygrid-day-number {
+        color: var(--accent-red);
+        font-size: 1.1rem;
+      }
+
+      /* Event Styling */
+      .fc-event {
+        background-color: var(--accent-red);
+        border: none;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+
+      /* Border Customization */
+      .fc td, .fc th {
+        border-color: var(--grid-border);
+      }
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+}
+
+li {
+  float: center;
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top:-30px;
+  font-size: 1.6rem;
+  font-weight: 560;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li a:hover {
+  background-color: transparent;
+  color:#d32f2f;
+}

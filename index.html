@@ -1,0 +1,35 @@
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" href="style.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js'></script>
+  </head>
+  <body>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="home.html">About</a></li>
+  </ul>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek'
+          },
+          // Sample events to show the red styling
+          events: [
+            { title: 'Project Launch', start: '2026-05-15' },
+            { title: 'Meeting', start: '2026-05-20' },
+             { title: 'capstone', start: '2026-06-10' }
+          ]
+        });
+        calendar.render();
+      });
+    </script>
+    <div id='calendar'></div>
+  </body>
+</html>
