@@ -42,7 +42,7 @@
       }
 
       .fc .fc-toolbar-title {
-        font-size: 2.6rem;
+        font-size: 3rem;
         font-weight: 800;
         color: var(--dark-black);
       }
@@ -100,17 +100,29 @@ li {
   float: center;
 }
 
+ul {
+  list-style-type: none;
+  margin: -10px;
+  padding: 40px;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
 li a {
   display: block;
-  color:black;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   margin-top:-30px;
-  font-size: 1.6rem;
-  font-weight: 560;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6em;
+  font-family:'Inter', -apple-system, sans-serif;
+  font-weight: 700;
 }
+
 
 li a:hover {
   background-color: transparent;

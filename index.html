@@ -6,13 +6,25 @@
   </head>
   <body>
     <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="home.html">About</a></li>
-  </ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="home.html">About</a></li>
+    </ul>
+
+    <div id='calendar'></div>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+
+        // 1. LOAD EVENTS FROM LOCAL STORAGE
+        // Check if 'calendarEvents' exists in localStorage. 
+        // If it does, parse it; if not, use your default sample events.
+        let localEvents = localStorage.getItem('calendarEvents');
+        let initialEvents = localEvents ? JSON.parse(localEvents) : [
+          { title: 'Project Launch', start: '2026-05-15' },
+          { title: 'Meeting', start: '2026-05-20' }
+        ];
+
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
           headerToolbar: {
@@ -20,16 +32,43 @@
             center: 'title',
             right: 'dayGridMonth,timeGridWeek'
           },
-          // Sample events to show the red styling
-          events: [
-            { title: 'Project Launch', start: '2026-05-15' },
-            { title: 'Meeting', start: '2026-05-20' },
-             { title: 'capstone', start: '2026-06-10' }
-          ]
+          
+          navLinks: true, 
+          
+          dateClick: function(info) {
+            let eventTitle = prompt('Enter Event Title for ' + info.dateStr + ':');
+            
+            if (eventTitle) {
+              // Add event to the calendar display
+              calendar.addEvent({
+                title: eventTitle,
+                start: info.dateStr,
+                allDay: true
+              });
+
+              // 2. SAVE UPDATED EVENTS TO LOCAL STORAGE
+              // Fetch all current events from FullCalendar
+              let allEvents = calendar.getEvents().map(function(event) {
+                return {
+                  title: event.title,
+                  start: event.startStr, // FullCalendar stores dates cleanly as strings here
+                  allDay: event.allDay
+                };
+              });
+
+              // Convert the array to a string and save it
+              localStorage.setItem('calendarEvents', JSON.stringify(allEvents));
+              
+              alert('Event saved to the browser!');
+            }
+          },
+
+          // Inject our loaded events here
+          events: initialEvents
         });
+        
         calendar.render();
       });
     </script>
-    <div id='calendar'></div>
   </body>
 </html>
