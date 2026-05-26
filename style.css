@@ -128,3 +128,25 @@ li a:hover {
   background-color: transparent;
   color:#d32f2f;
 }
+
+   .fc td, .fc th {
+        border-color: var(--grid-border);
+      }
+
+      .fc .fc-daygrid-day:hover {
+        background-color: rgba(212, 47, 47, 0.1);
+        cursor: pointer;
+      }
+
+     
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 100px;
+}
+    
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
