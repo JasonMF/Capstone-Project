@@ -11,10 +11,9 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="home.html">About</a></li>
   </ul>
-
+  
   <div id='calendar'></div>
-
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
 
@@ -23,8 +22,7 @@
       // If it does, parse it; if not, use your default sample events.
       let localEvents = localStorage.getItem('calendarEvents');
       let initialEvents = localEvents ? JSON.parse(localEvents) : [
-        { title: 'Project Launch', start: '2026-05-15' },
-        { title: 'Meeting', start: '2026-05-20' }
+        { title: 'Capstone Due', start: '2026-06-03' }
       ];
 
       var calendar = new FullCalendar.Calendar(calendarEl, {
