@@ -1,6 +1,7 @@
 var i = 0;
-var txt = 'Welcome to Simplicity.';
+var txt = 'Welcome to Simplistic.';
 var speed = 60;
+
 
 function typeWriter() {
   if (i < txt.length) {
